@@ -16,3 +16,5 @@ Repositorio de mis clases particulares y tutorias de Fundamentos de Programacion
 - [pythonFIUNA2026](https://github.com/diegostaPy/pythonFIUNA2026) - material del curso de Python de la FIUNA.
 
 Si te interesa, tambien podes ver mi repositorio de la materia Metodos Numericos: [MN](https://github.com/hiimghosty/MN).
+
+Y si buscas material de cuando la materia se cursaba con C++: [clasescompu](https://github.com/hiimghosty/clasescompu/).
