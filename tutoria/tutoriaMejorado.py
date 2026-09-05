@@ -35,10 +35,13 @@ def contar_unos_por_grupo(numero_binario, tamanio_grupo=TAMANIO_GRUPO):
 def insertar_contadores(numero_binario, contadores, tamanio_grupo=TAMANIO_GRUPO):
     """Arma la lista final intercalando cada grupo de bits con su contador."""
     resultado = []
-    for indice_grupo, inicio in enumerate(range(0, len(numero_binario), tamanio_grupo)):
+    indice_grupo = 0
+    for inicio in range(0, len(numero_binario), tamanio_grupo):
         grupo = numero_binario[inicio:inicio + tamanio_grupo]
-        resultado.extend(grupo)
+        for bit in grupo:
+            resultado.append(bit)
         resultado.append(contadores[indice_grupo])
+        indice_grupo = indice_grupo + 1
     return resultado
 
 
