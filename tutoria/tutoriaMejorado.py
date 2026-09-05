@@ -26,9 +26,15 @@ def generar_numero_binario(cantidad_bits):
 def contar_unos_por_grupo(numero_binario, tamanio_grupo=TAMANIO_GRUPO):
     """Devuelve, por cada grupo de 'tamanio_grupo' bits, cuantos son 1."""
     contadores = []
-    for inicio in range(0, len(numero_binario), tamanio_grupo):
-        grupo = numero_binario[inicio:inicio + tamanio_grupo]
-        contadores.append(grupo.count(1))
+    contador_unos = 0
+    posicion = 1
+    for bit in numero_binario:
+        if bit == 1:
+            contador_unos = contador_unos + 1
+        if posicion % tamanio_grupo == 0:
+            contadores.append(contador_unos)
+            contador_unos = 0
+        posicion = posicion + 1
     return contadores
 
 
@@ -36,12 +42,13 @@ def insertar_contadores(numero_binario, contadores, tamanio_grupo=TAMANIO_GRUPO)
     """Arma la lista final intercalando cada grupo de bits con su contador."""
     resultado = []
     indice_grupo = 0
-    for inicio in range(0, len(numero_binario), tamanio_grupo):
-        grupo = numero_binario[inicio:inicio + tamanio_grupo]
-        for bit in grupo:
-            resultado.append(bit)
-        resultado.append(contadores[indice_grupo])
-        indice_grupo = indice_grupo + 1
+    posicion = 1
+    for bit in numero_binario:
+        resultado.append(bit)
+        if posicion % tamanio_grupo == 0:
+            resultado.append(contadores[indice_grupo])
+            indice_grupo = indice_grupo + 1
+        posicion = posicion + 1
     return resultado
 
 
