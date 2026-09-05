@@ -7,6 +7,20 @@ def validar():
 
   return N
 
+def listaDeContadoresDeUno(nroBinario):
+    contador = 0
+    posicionBinario = 1
+    listaContador = []
+    for elemento in nroBinario:
+        if elemento == 1:
+            contador = contador + 1
+        if posicionBinario % 3 == 0:
+            listaContador.append(contador)
+            contador = 0
+        posicionBinario = posicionBinario + 1
+    return listaContador
+
+
 def listaFinal(nroBinario, listaContador):
     posicionBinario = 1
     posicionLista = 0
@@ -18,23 +32,6 @@ def listaFinal(nroBinario, listaContador):
             posicionLista = posicionLista + 1
         posicionBinario = posicionBinario + 1
     return listaPedida
-
-
-def listaFinal(nroBinario,listaContador):
-  posicionBinario=1
-  posicionLista=0
-  listaPedida=[]
-  for elemento in nroBinario:
-    if ((posicionBinario-1)%3==0):
-      listaPedida.append(listaContador[posicionLista])
-      posicionLista=posicionLista+1
-    else:
-      listaPedida.append(elemento)
-
-
-    posicionBinario=posicionBinario+1
-
-  return listaPedida  
 
 
 

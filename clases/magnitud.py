@@ -1,25 +1,18 @@
-import random
+"""
+Calcula la magnitud (norma euclidiana) de un vector:
+raiz cuadrada de la suma de cada componente al cuadrado.
+"""
+
 import math
 
-def magnitud(B):
-    suma= 0 
-    for x in B:
-        suma = suma + x**2
 
-    resultado = math.sqrt(suma)
-    return resultado
-
-
-   
+def calcular_magnitud(vector):
+    """Calcula la magnitud (norma euclidiana) de un vector."""
+    suma_de_cuadrados = 0
+    for componente in vector:
+        suma_de_cuadrados += componente ** 2
+    return math.sqrt(suma_de_cuadrados)
 
 
-
-C=[20,30,40]
-magnitud(C)
-
-
-print( "La magnitud del vector es: ")
-print(magnitud(C))
-
-
-# random.randint(15,30)
+vector = [20, 30, 40]
+print("La magnitud del vector es:", calcular_magnitud(vector))
